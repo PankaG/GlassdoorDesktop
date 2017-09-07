@@ -1,0 +1,33 @@
+{
+  "name": "Glassdoor",
+  "version": "0.0.2",
+  "description": "Glassdoor Mac App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "clean": "rm -rf build/*",
+    "pack": "electron-packager ./ --platform=darwin --arch=x64 --out=build --overwrite --icon=logo.icns",
+    "compress": "cd build/Glassdoor-darwin-x64/; 7z a Glassdoor.zip Glassdoor.app",
+    "install": "cp -r build/Glassdoor-darwin-x64/Glassdoor.app /Applications/Glassdoor.app",
+    "publish": "aws s3 cp build/Glassdoor-darwin-x64/Glassdoor.zip s3://scriptspry/ --profile=ss"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Glassdoor",
+    "Mac",
+    "App"
+  ],
+  "author": "ScriptSpry",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-packager": "^8.2.0",
+    "electron-prebuilt": "^1.4.5"
+  },
+  "dependencies": {
+    "electron-packager": "^8.7.2",
+    "electron-prebuilt": "^1.4.13"
+  }
+}
