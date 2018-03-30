@@ -1,4 +1,4 @@
-# Glassdoor Mac
+# Glassdoor Mac Project
 
 Based on Electron, built for Mac OS.
 
